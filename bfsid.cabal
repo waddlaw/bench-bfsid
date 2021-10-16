@@ -47,7 +47,7 @@ benchmark bench-bfsid
 
   default-language: Haskell2010
 
-executable joe-bfsid
+executable joe-bfsid-v1
   main-is: app/JoeMain.hs
   ghc-options: -O2
   build-depends:
@@ -55,7 +55,7 @@ executable joe-bfsid
     , base >=4.7 && <5
   default-language: Haskell2010
 
-executable tomato-bfsid
+executable tomato-bfsid-v1
   main-is: app/TomatoMain.hs
   ghc-options: -O2
   build-depends:

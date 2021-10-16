@@ -67,21 +67,22 @@ All
 ---
 
 ```
-$ cabal exec -- hyperfine 'joe-bfsid' 'tomato-bfsid'
-Benchmark #1: joe-bfsid
+$ cabal exec -- hyperfine 'joe-bfsid-v1 5 5' 'tomato-bfsid-v1 5 5'
+Benchmark #1: joe-bfsid-v1 5 5
   Time (mean ± σ):       3.3 ms ±   0.1 ms    [User: 3.3 ms, System: 0.2 ms]
-  Range (min … max):     3.1 ms …   4.2 ms    724 runs
+  Range (min … max):     3.2 ms …   4.1 ms    715 runs
  
   Warning: Command took less than 5 ms to complete. Results might be inaccurate.
+ 
+Benchmark #2: tomato-bfsid-v1 5 5
+  Time (mean ± σ):      75.1 ms ±   1.0 ms    [User: 74.6 ms, System: 0.5 ms]
+  Range (min … max):    74.2 ms …  78.8 ms    39 runs
+ 
   Warning: Statistical outliers were detected. Consider re-running this benchmark on a quiet PC without any interferences from other programs. It might help to use the '--warmup' or '--prepare' options.
  
-Benchmark #2: tomato-bfsid
-  Time (mean ± σ):      80.3 ms ±   1.4 ms    [User: 78.9 ms, System: 1.5 ms]
-  Range (min … max):    78.2 ms …  84.8 ms    35 runs
- 
 Summary
-  'joe-bfsid' ran
-   24.59 ± 0.94 times faster than 'tomato-bfsid'
+  'joe-bfsid-v1 5 5' ran
+   22.59 ± 0.84 times faster than 'tomato-bfsid-v1 5 5'
 ```
 
 ## dfs
