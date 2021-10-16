@@ -83,3 +83,33 @@ Summary
   'joe-bfsid' ran
    24.59 ± 0.94 times faster than 'tomato-bfsid'
 ```
+
+## dfs
+
+```
+$ cabal bench
+dfsid (small tree)
+    Joe dfs1:    OK (0.28s)
+      512  ns ±  27 ns
+    Tomato dfs1: OK (0.16s)
+      594  ns ±  50 ns
+  dfsid (big tree)
+    Joe dfs1:    OK (0.13s)
+      256  μs ±  22 μs
+    Tomato dfs1: OK (0.14s)
+      304  μs ±  27 μs
+```
+
+```
+$ cabal bench --benchmark-options '+RTS -T'
+dfsid (small tree)
+    Joe dfs1:    OK (0.14s)
+      498  ns ±  46 ns, 2.5 KB allocated,   0 B  copied,  53 MB peak memory
+    Tomato dfs1: OK (0.16s)
+      578  ns ±  41 ns, 3.0 KB allocated,   0 B  copied,  53 MB peak memory
+  dfsid (big tree)
+    Joe dfs1:    OK (0.52s)
+      247  μs ± 5.5 μs, 1.3 MB allocated, 6.7 KB copied,  53 MB peak memory
+    Tomato dfs1: OK (0.16s)
+      297  μs ±  25 μs, 1.6 MB allocated, 7.7 KB copied,  53 MB peak memory
+```

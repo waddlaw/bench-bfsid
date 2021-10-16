@@ -8,9 +8,11 @@ import Joe.Bfs.Ver1
 import Joe.Bfs.Ver2
 import Joe.Bfs.Ver3
 import Joe.Bfs.Ver4
+import Joe.Dfs.Ver1
 
 import Tomato.Bfs.Ver1
 import Tomato.Bfs.Ver2
+import Tomato.Dfs.Ver1
 
 main :: IO ()
 main = do
@@ -34,5 +36,13 @@ main = do
       -- tomato version
       , bench "Tomato bfs1"  $ nf Tomato.Bfs.Ver1.bfsid bigTree
       , bench "Tomato bfs2"  $ nf Tomato.Bfs.Ver2.bfsid bigTree
+      ]
+    , bgroup "dfsid (small tree)"
+      [ bench "Joe dfs1"     $ nf Joe.Dfs.Ver1.dfsid smallTree
+      , bench "Tomato dfs1"  $ nf Tomato.Dfs.Ver1.dfsid smallTree
+      ]
+    , bgroup "dfsid (big tree)"
+      [ bench "Joe dfs1"     $ nf Joe.Dfs.Ver1.dfsid bigTree
+      , bench "Tomato dfs1"  $ nf Tomato.Dfs.Ver1.dfsid bigTree
       ]
     ]
